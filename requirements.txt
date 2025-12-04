@@ -1,0 +1,6 @@
+# FINISH THIS 
+
+#numpy
+#matplotlib
+#pandas
+#pathlib
