@@ -1,55 +1,55 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+## TAKEN FROM https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
+## To ignore Mac files.
+# General
+.DS_Store
+__MACOSX/
+.AppleDouble
+.LSOverride
+Icon[]
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Thumbnails
+._*
 
-# Precompiled Headers
-*.gch
-*.pch
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+## TAKEN FROM https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
+## To ignore Windows files.
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Dump file
+*.stackdump
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Folder config file
+[Dd]esktop.ini
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
-# debug information files
-*.dwo
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
