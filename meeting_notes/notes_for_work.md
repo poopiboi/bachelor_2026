@@ -97,3 +97,27 @@ The gravity equation, as detailed above, is also typically used with the log sca
 
 Issues with logging are how to deal with zero values (which we have many of in the dataset. How do we deal with NaNs in the best way?) One solution is to use the Poisson Pseudo-Maximum Likelihood (look it up! Standard use for modern Gravity Theory uses)
 
+
+
+### --- 19/03/2026 ---
+We have an aggregate system of dataframes for all members of ECOWAS that can be worked on interchangably. We can access these through a dictionary.
+In addition, we now have a new, improved hypothesis that can synthesize the economic and cultural elements of the project:
+
+As a result of conflicts, do trade connections between countries sharing historical and linguistic backgrounds conserve a stronger tradeflow than countries where these differ, and (as an appendum), are refugees from a conflict country more likely to seek out countries with higher cultural gravity?
+
+In ECOWAS, we have three languages represented and four previous cultural hegemons: 
+English (Nigeria, Ghana, Sierra Leone, The Gambia)
+French (Benin, Guinea, Ivory Coast, Senegal, Togo, Mali, Niger, Burkina Faso)
+Portuguese (Cape Verde, Guinea-Bissau)
+US (Liberia)
+
+As we have a high number of NaN values for Liberia and the Portuguese-speaking nations, we are opting to exclude these in the initial stages, to get useful results with the remaining nations.
+
+
+Discovery of Gravity:
+    Certain missing values NaN in tradeflow can be found in the BACI tradesets. (for example Gambia-Guinea 2021)
+    Tradeflow in Gravity is specifically the export from origin country to destination in the dyad. Therefore all values in our Gambia_df is strictly exports
+    Gambia's exports to other ECOWAS countries grow massively around 2010, before falling back down. We can look into the BACI-set to find out what constitutes this growth.
+
+    Time to create a new column that makes a combined trade dataset.
+

@@ -1,0 +1,12 @@
+Prøv at kvantificere kulturel nærhed, og træn en model til at predicte hvilket antal af flygtninge der ender i hvilke lande, og så kig på koefficienterne i den model og se hvor vigtig er det kulturelle i den model.
+
+Vi skal se på, nu hvor der er riots, hvad er effekten? Kan vi træne en model for at se impacts på forbindelser mellem lande i forbindelse med eksempelvis riots. 
+
+Prøv først at træne en model der forudsiger procentdelen af impacten på dig og andre lande (på handel mellem Gambia og andre ECOWAS eksempelvis), og så først senere se på at predicte størrelsen direkte. Procenter er nemmere at starte ud fra.
+
+Prøv at tage nogle valg nu. "I første omgang er det de her spørgsmål vi kigger på." 
+
+Vi har fjernet lande fra ECOWAS der snakkede portugisisk+Liberia(tidligere US koloni) Måske vi skal tage de lande tilbage og smide dem i en "andre"-kategori. 
+
+Vi skal vurdere om det er værd at udfylde datamangler manuelt fra BACI. Og hvis vi vælger at gøre noget ved det, skal det selvfølgelig argumenteres for. 
+
