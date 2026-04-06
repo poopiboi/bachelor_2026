@@ -121,3 +121,38 @@ Discovery of Gravity:
 
     Time to create a new column that makes a combined trade dataset.
 
+
+
+### --- 03/04/2026 ---
+For the future, think of graph neural networks. Might be very applicable to our work
+
+Major question:
+HOW are we going to synthesise data? First idea is to simply use the Gravity Model: $F_{ij} = G \frac{M_i^{\beta_1} M_j^{\beta_2}}{D_{ij}^{\beta_3}} \eta_{ij}$
+
+where $F_{ij}$ represents the volume of trade from country $i$ to country $j$,  
+$M_i$ and $M_j$ represent the GDPs of countries $i$ and $j$,  
+$D_{ij}$ denotes the distance between them,  
+and $\eta_{ij}$ is an error term with expectation equal to 1.
+
+
+In our case, it would be Gravity(year/Country)->Gravity(GDP_o)*Gravity(GDP_d) / Gravity(distance)
+However, we also need to find the elasticities of exports and imports (these are the beta values we are raising the values to), and a constant G which will work as our overall scaling constant 
+
+In other words, we estimate elasticities of exporter size, importer size, and distance, and the constant term G from a PPML gravity regression. Then we plug these into the multiplicative gravity equation to generate synthetic trade flows.
+
+
+Since Poisson regression and distributions are good for count data, it is a generally good approach for dealing with the kind of data we have.
+However, after implementing an initial poisson with the fixed effects (exporter, importer, year) and working on pure raw GDP, aiming to synthesize tradeflow_baci for every dyad, we found that the synthetic data was wildly inaccurate. 
+Once we removed the fixed effects and ran it on GDP Per Capita, it was however wildly inaccurate for the larger economies, as it did not adequately account for changes in absolute size of the economies.
+
+
+Another note to make regarding our countries, is that tradeflow_baci is specifically only tradeflows in terms of goods. We also have trade in services and other economic movements that are defined in other columns like (tradeflow_comtrade_o, tradeflow_comtrade_d, tradeflow_imf_o, tradeflow_imf_d). And tradeflow_baci is specifically only the exports in each country. Should we be combining economic data from all of these when looking at the developments? And should we add synthetic data to all of these? 
+
+
+--- 06/04/2026 --- 
+A growing issue is the bad documentation of trade for the African countries. Trade might be mislabelled, if not be outright missing. The problem isn't necessarily major in our case, as we are only interested in the effect conflict has on trade (thus we can extrapolate the differences in reported trade to overall trade (though taking in mind, changes in bureaucratic practice in countries could more heavily affect trade than anything else)). However, we propose a combined trade activity column, that for each dyad take the combined BACI, IMF and Comtrade columns. However, even with these additions, we still have some dyads that are missing trade information.
+
+
+
+
+

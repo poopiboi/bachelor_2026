@@ -1,0 +1,21 @@
+Mødenoter:
+
+De ting vi gør ved NaN-values er helt op til os, og er noget vi skal argumentere for i vores rapport. Det vigtigste er at vi overvejer det godt.
+
+Det er altid vigtigt når vi tager de her Machine Learning modeller, at finde ud af hvad man skal sammenligne med. Hvad er "god performance"? 
+Noget vi kunne overveje at tage en virkelig simpel model, f.eks. linæer regression, og sammenligne vores ML model med dette for at påvise denne effekt.
+Vi kunne også vise hvad modellen viste hvis vi bytter rundt på dataen/shuffler det, så der er "intet at lære", for at vise hvordan en sådan model ville virke kontra vores egen.
+Det gode ved det her er at vi kan lave tusindvis af de shuffles, og så lave en samlet overordnet performance, og så se om vores model er signifikant bedre 
+
+HUSK når I laver Machine Learning, sæt altid jeres ting i kontekst. 
+
+Vi kunne også lave en nul-model der bare trækker et tilfældigt tal fra handelsændringen, og så sammenligner resultatet med vores model. 
+
+
+Passe på med at træne en model på hver eneste datapunkt/land, så der er stor sandsynlighed for at overfitte. Men kan godt være der kan grupperes, f.eks. fransktalende eller engelsktalende lande.
+Vi kan godt prøve at træne en model per land, og så samle dem som en ensemble model - det er måske spændende? Men Jonas er i tvivl
+
+Nu er det også tid til at indsnævre vores hypoteser/projekt i høj grad. 
+
+
+Vi kan skrive en mail for at få feedback direkte fra Jonas i april. 
