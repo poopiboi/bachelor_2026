@@ -156,3 +156,11 @@ A growing issue is the bad documentation of trade for the African countries. Tra
 
 
 
+
+--- 13/04/2026 ---
+The synthetising of data continues
+We are still using PPML for it, however, we now use the so called "PPML HC1 refers to the use of Poisson Pseudo-Maximum Likelihood (PPML) regression with a Heteroskedasticity-Consistent (HC1) covariance matrix estimator." -> This is shown as ppml.fit(cov_type="HC1") in the statsmodels code.
+With this approach, we should add that:
+"Missing trade flows are imputed using predicted conditional means from a Poisson pseudo–maximum likelihood gravity model estimated on observed bilateral flows. Synthetic values are generated via stochastic draws from the implied Poisson distribution"
+
+
