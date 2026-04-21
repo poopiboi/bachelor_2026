@@ -1,0 +1,29 @@
+I stedet for at starte med konflikter, find ud af hvad "normalbilledet" er -> Det gør det nemmere at forstå hvad impacten af nye events er.
+Lav en grundig analyse af, hvis der ikke er konflikter, hvordan ser landes forhold ud. (Tag i mente hvor store lande er osv, hvordan kan vi sammenligne lande -> Er der en måde vi kan kvalificere det på så det både gælder for både Congo, Ethiopien og Sydafrika, selvom de er meget forskellige lande?)
+
+Plot de forskellige matrikker i jeres data som funktion af tid, og se om der er et hop.
+Og så lav også det tidsvindue, 3 år før konflikt, 3 år under, 3 år efter -> hvis der er en distribution, så måske ligger konfliktåret ud for den distribution. 
+
+Hvis I vil vide hvordan en konflikt rammer et land, er det så vigtigt at vide hvordan en land opfører sig uden konflikt. Så kan vi postulere at krigen har en effekt på dette.
+
+Så kan vi bruge flygtninge som en benchmark. Eventuelt kan vi normalisere fatalities til befolkningstal i dataen.
+
+Regional normalvækst, national normalvækst, og så kan vi sammenligne dem. 
+
+Tanke: En "event" kan også være investeringer fra andre store lande. Kan vi se om det har en virkning på 
+
+
+Vi ser en korrelation mellem konflikt og GDP, 
+
+
+Pas på med ikke at skifte fokus for meget. Prøv at lave en meget kondenseret beskrivelse af hvad vores hovedspørgsmål er: Det med konflikter og handel. Lav en liste ud fra det: Hvis vi gerne vil have en bachelorprojekt ud fra det her, hvad er det så for nogle analyser der skal med. Lav en mindmap over det, få et overblik, så vi kan være meget konkrete.
+Og hvis der sker for meget på det papir, så kan vi indsnævre det. Er det for bredt? Er det så kun konflikter i 00'erne, eksempelvis. Eller en speciel type konflikt. 
+Måske når der kommer konflikt, så er der en handelspartner der bliver enormt vigtig. Så det ændrer netværket.
+
+Eller når vi har 3 lande, der handler meget sammen, og der kommer borgerkrig i det ene, hvordan ændrer det handelen imellem dem?
+
+Nøglen er at finde normalen. 
+
+
+Måske se på Gambia og et andet land også, og så sørg for at det giver mening. Og så kan vi bruge det konkrete eksempel på at lave hypoteser. ("Ah, med Gambia skete der helt vildt meget med den her handelspartner, så skal hypotesen derover" osv.)
+For at få en robust hypotese, skal vi finde eksempler på lignende situationer der kan sammenlignes og agerer ensartigt.

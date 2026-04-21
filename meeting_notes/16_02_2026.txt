@@ -1,0 +1,17 @@
+Se på 1-2 konflikter i Afrika datasettet og dens effekt på handelsforbindelser
+
+Se på udvikling over tid på nogle features
+
+Se på handelsnetværket over tid og se om nogle forbindelser ændrer sig over tid 
+
+Mere EDA til at indsnævre hypoteser vi kigger på
+Brug/find litteratur til det samme 
+
+
+Til senere - Find et par eksempler der kan bære meget af projektet
+
+
+How Nations Fail - bog -> forfatteren fra Tyrkiet er et godt sted at starte med litteratur
+
+SKRIV ALT NED!! Hvad vi laver
+Og skriv idéer ned til hypoteser 

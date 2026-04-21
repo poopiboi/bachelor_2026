@@ -1,0 +1,21 @@
+Vi kan tage logaritmen og normalisere for at få procenter på vores eksport. 
+
+Det giver mening at bruge Gravity Model of Trade som en teoretisk grundlag for en hypotese.
+
+
+Hvordan håndterer vi NaNs i vores dataset? Det må vi selv finde frem til. 
+
+For at se indvirkningen af konflikter i forhold til normalen, er vi nødt til at vælge lande med hverken for meget eller for lidt konflikt.
+
+
+Er vi på vej mod et godt sted? Det vigtigste er at få nogle reelle resultater. 
+En god øvelse: Det er godt at få noget visuelt at gå ud fra.
+Det kan også betale sig at sætte et projekt"skelet" op med overskrifter på hvad en analyse kan indeholde.
+Det giver et mere klart syn over hvad det er vi mangler. 
+Vi kan også lave lister inde i hver sektion, for at se hvad den sektion skal indeholde.
+Så kan vi få et overblik over hvad det er det hele skal handle om.
+
+VISUALISÉR DET!
+
+Til næste gang:
+3-5 konflikter, plot ting og få det visualiseret. 
