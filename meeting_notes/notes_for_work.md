@@ -149,7 +149,8 @@ Once we removed the fixed effects and ran it on GDP Per Capita, it was however w
 Another note to make regarding our countries, is that tradeflow_baci is specifically only tradeflows in terms of goods. We also have trade in services and other economic movements that are defined in other columns like (tradeflow_comtrade_o, tradeflow_comtrade_d, tradeflow_imf_o, tradeflow_imf_d). And tradeflow_baci is specifically only the exports in each country. Should we be combining economic data from all of these when looking at the developments? And should we add synthetic data to all of these? 
 
 
---- 06/04/2026 --- 
+### --- 06/04/2026 --- 
+
 A growing issue is the bad documentation of trade for the African countries. Trade might be mislabelled, if not be outright missing. The problem isn't necessarily major in our case, as we are only interested in the effect conflict has on trade (thus we can extrapolate the differences in reported trade to overall trade (though taking in mind, changes in bureaucratic practice in countries could more heavily affect trade than anything else)). However, we propose a combined trade activity column, that for each dyad take the combined BACI, IMF and Comtrade columns. However, even with these additions, we still have some dyads that are missing trade information.
 
 
@@ -157,10 +158,72 @@ A growing issue is the bad documentation of trade for the African countries. Tra
 
 
 
---- 13/04/2026 ---
+### --- 13/04/2026 ---
+
 The synthetising of data continues
+
 We are still using PPML for it, however, we now use the so called "PPML HC1 refers to the use of Poisson Pseudo-Maximum Likelihood (PPML) regression with a Heteroskedasticity-Consistent (HC1) covariance matrix estimator." -> This is shown as ppml.fit(cov_type="HC1") in the statsmodels code.
 With this approach, we should add that:
 "Missing trade flows are imputed using predicted conditional means from a Poisson pseudo–maximum likelihood gravity model estimated on observed bilateral flows. Synthetic values are generated via stochastic draws from the implied Poisson distribution"
 
 
+### --- 16/04/2026 ---
+
+We are finally fitting some linear regression on our data! That's progress right there.
+
+Results on fitting a regression line on the trade data works well, good values in terms of the simplicity of the model, with a decent Out-of-sample R²: 0.372 and In-sample R² = 0.384  (so it is very stable, not overfitted and acts well!)
+An RMSE of 2.42 means predictions are off by roughly
+$exp⁡(2.42)$≈11.3×
+on average. (this is supposedly fine for trade models without Fixed Effects, but goes to show we are off by some orders of magnitude)
+
+#### Issues are arising though
+
+However, once we start fitting on the conflict data, we run into some issues.
+
+ (specifically when it comes to inference: Understanding how and why variables are related, as opposed to prediction)
+
+Therefore, we can say that we first want to establish the matter of inference with a simple baseline that asks "What is the effect of a conflict type X, given other constants"
+-> This means we would look into statistical significance, coefficient signs and magnitudes, and simple interpretability.
+
+IMPORTANT DISTINCTION: We are not yet worried about minimizing a prediction error or the out-of-sample/test R²
+
+
+This should ideally lead into the second question of, given a set of conflict data, how can we predict future trade flows between countries. 
+Here we should look at Out-of-sample/test RMSE and R². And in reverse, we can ignore whether variables are significant and coefficients are interpretable.
+
+
+SO for modelling these things, does this require two distinct approaches? Inference is best with few regressors, prediction works with many correlated predictors (such as our ACLED conflict data)
+
+THEREFORE, we can introduce smaller subsets of the conflict data to our baseline, our inferential jump-off point, where we can see the _directional_ effects of conflict. This would in effect be several smaller inference log regressions built on the trade foundations.
+
+Then afterwards, we can introduce all the variables into a single machine learning model, trying to predict trade using the ACLED data. 
+
+CRUCIALLY, we can find that conflict variables are poor linear predictors, but useful nonlinear predictors instead. 
+
+So, we propose a set of baselines: First, the Gravity trade pipeline (as present in 04_modelling.ipynb)
+
+
+
+### --- 23/04/2026 ---
+
+An issue that was raised (by Kiwi and Martin, champs) is that the different conflict types are not weighted differently at the moment. They are all treated equally as counts. 
+We can use a ML approach to find the weights (so it is not done manually), so that the conflict types will take this into account when training the model.
+
+So we can narrow in towards "How does a conflict type explain tradeflow"
+Then we can do an ablation study on it: "a systematic process of removing, disabling, or modifying specific components (features, layers, or modules) of a trained model to measure their impact on overall performance."
+
+On top of introducing lag time to all conflict data (and is 1 year the correct amount?), is it worth it to introduce a new parameter that could measure the average development of 5 years? How do we counter-act the natural growth of the global economy? (We could minus the expected natural growth with the total). So when we take expected growth into account when visualising actual growth, we don't have inflated numbers because of the years/countries.
+
+
+
+TODO: 
+- Add lag time to all dataframes generated   (TO ARGUE FOR THE LAG TIME, we can extrapolate the J-Curve Effect ) DONE
+- Measure weights for conflict types using ML
+- Add new column (5 year average) to measure conflicts against (maybe?)
+- Add ML models that use Fixed Effects 
+- Use ablation study to measure features individually
+
+
+
+We have now added overall 1-year time lag to the ACLED data (implemented in 02_EDA.ipynb) and updated the combined_tradeflow_baci to be created AFTER synthetic data
+In addition, we have problems with extremely small tradeflows that are present in the data. These can be considered simple errors of reporting (ECOWAS themselves report on a high amount of unregulated irregular trade across borders), therefore we add a threshold for values that should be kept.
