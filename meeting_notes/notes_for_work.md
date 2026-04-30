@@ -227,3 +227,35 @@ TODO:
 
 We have now added overall 1-year time lag to the ACLED data (implemented in 02_EDA.ipynb) and updated the combined_tradeflow_baci to be created AFTER synthetic data
 In addition, we have problems with extremely small tradeflows that are present in the data. These can be considered simple errors of reporting (ECOWAS themselves report on a high amount of unregulated irregular trade across borders), therefore we add a threshold for values that should be kept.
+
+
+### --- 24/04/2026 ---
+Reading the Practical Guide to Trade Analysis, we are met with a very simple formula to looking at the economic openness of a country. Perhaps we should measure this for the countries in ECOWAS?
+However, to quote (p. 16): "Does it matter that openness correlates with country characteristics such as the level of income (as just shown), location (e.g. landlocked-ness) or size? It does."
+It adds furthermore: 
+"Concerning measurement, because “raw” openness embodies information about other country characteristics it cannot be used for cross-country comparisons without adjustment. For instance, Belgium has a higher ratio of trade to GDP than the United States, but this is mainly because the United States is a larger economy and therefore trades more with itself. If we want to generate meaningful comparisons we will have to control for influences such as economic size that we think are not interesting in terms of the openness ratio." AND finally: "Observe in passing that even for something seemingly straightforward like interpreting the share of trade in GDP raw numbers can be meaningless. The same degree of openness has a very different meaning for a country with a large coastline and close to large markets than for one that is landlocked, remote and with a lower level of income."
+
+
+
+We tried to use Gamma PML and negative binomial, but results were lacking. 
+
+
+
+### --- 28/04/2026 ---
+Just visited the Centre for African Studies at KU and met a nice researcher named Benjamin William Jones. 
+First off, there is a theory by Keith Hart regarding informal economies in Ghana from the 1970's. 
+In addition, usual African research is done using tax information, rather than trade due to the more solid base for this research (find papers for this)
+
+Importantly, in our methodology, explain how each choice we have made is supported by an academic study -> Based on this research, we have done this (for example, why are we synthesising? Why are we using PPML? etc. etc.)
+In addition, Abel Gwaindepi is the leading researcher in the country in regards to African economics and development.
+I am thinking of sending him an email to ask about our methodology for synthetic data, and the overall validity of measuring the effect of conflict on trade.
+https://research.diis.dk/en/persons/abel-gwaindepi/
+https://teol.ku.dk/cas/staff/
+
+
+Discovered a lot of new theory, great day. Let's go.
+
+
+
+
+
