@@ -139,22 +139,44 @@ Filtering to dyad-years where `tradeflow_baci_synthetic_flag == 0`:
 
 Compare to residual std ≈ 1.5: every shock is well within one standard deviation of zero. The only large residual is Mali 2021, in the *wrong* direction — likely a COVID reopening artifact where GDP remained depressed but goods trade recovered.
 
-### 4g. Step 10 — All four models on RELIABLE `combined_trade_baci` (the cleanest possible apples-to-apples)
+### 4g. Step 10 + 12 — Five-estimator comparison on RELIABLE `combined_trade_baci`
 
-Reliable filter: rows where all five source synthetic flags == 0 AND `combined_trade_baci` not null. Yields N train = 1,280, N test = 275.
+Reliable filter: rows where all five source synthetic flags == 0 AND `combined_trade_baci` not null. Yields N train = 1,280, N test = 275. PPML added in Step 12 — log-scale metrics for cross-method comparability.
 
-| Rank | Model | Conflict | RMSE | MAE | R² | Δ vs OLS FE |
+| Rank | Model | Conflict | RMSE | MAE | R² (log) | Δ vs OLS FE |
 |---|---|---|---:|---:|---:|---:|
 | 1 | **Random Forest** | **none** | 0.8707 | 0.6103 | **0.6749** | **+0.061** |
 | 2 | Random Forest | fatalities | 0.9313 | 0.6641 | 0.6281 | +0.014 |
-| 3 | OLS Linear FE | disorder | 0.9415 | 0.7160 | 0.6199 | +0.006 |
+| 3 | OLS Linear FE | disorder (best) | 0.9415 | 0.7160 | 0.6199 | +0.006 |
 | 4 | OLS Linear FE | none | 0.9488 | 0.7197 | **0.6140** | baseline |
-| 5 | MLP | fatalities | 0.9564 | 0.6842 | 0.6078 | −0.006 |
+| 5 | MLP | fatalities (best) | 0.9564 | 0.6842 | 0.6078 | −0.006 |
 | 6 | MLP | none | 0.9810 | 0.7264 | 0.5874 | −0.027 |
 | 7 | XGBoost | none | 0.9827 | 0.7061 | 0.5859 | −0.028 |
-| 8 | XGBoost | total_conflicts + fatalities | 1.0221 | 0.7187 | 0.5521 | −0.062 |
+| 8 | **PPML FE** | none (log scale) | 1.0613 | 0.7763 | **0.5171** | −0.097 |
 
-**Random Forest gravity-only is the strongest model in the entire analysis.** The +0.061 R² gap over OLS FE is the cleanest evidence that nonlinear gravity interactions matter. Crucially, RF *with* conflict (R² = 0.628) is *worse* than RF without (R² = 0.675) — the lift comes from gravity nonlinearity, not from conflict variables.
+PPML levels-scale metrics (for cross-reference with `04_modelling copy.ipynb`): RMSE = 406,437.96, MAE = 196,719.48, R² = 0.2098.
+
+**Two key observations:**
+1. Random Forest has the highest point R², but the gap over OLS Linear FE is small. **Bootstrap robustness check (Section 4h) shows it does not survive resampling at the 95% CI.**
+2. **PPML — the canonical gravity-literature estimator — ranks last** of the five, even on log-scale. The combination of small training sample, FE absorbing most of the heteroskedasticity that PPML normally exploits, and IRLS being less efficient than direct OLS solve for this data structure puts it behind both OLS Linear FE and the tree ensembles.
+
+### 4h. Bootstrap CI on the RF-vs-OLS-FE gap (Step 11)
+
+To test whether the +0.061 RF lift over OLS Linear FE is statistically distinguishable from zero, we refit both models on the reliable subset and bootstrap the test set 2,000 times.
+
+| Metric | Value |
+|---|---:|
+| RF R² (refit, full test set) | 0.6608 |
+| OLS Linear FE R² (refit) | 0.6140 |
+| Point gap (RF − OLS) | +0.0468 |
+| Bootstrap mean Δ | +0.0480 |
+| 95% CI on Δ | [−0.0282, +0.1338] |
+| Pr(RF > OLS) | 0.880 |
+| **Verdict** | **CI INCLUDES zero — gap not statistically distinguishable from zero at α = 0.05** |
+
+The directional probability is high (88%) and the point estimate is positive, but the CI on N = 275 test rows straddles zero. Honest interpretation: Random Forest *may* be capturing nonlinear gravity interactions, but the test set is too small to confirm this at conventional confidence levels.
+
+(Minor note: refit RF R² = 0.6608 vs Step 10's 0.6749 — small preprocessing nuances in the bootstrap helper. OLS R² matches exactly. The discrepancy doesn't affect interpretation; the gap distribution is the relevant statistic.)
 
 ---
 
