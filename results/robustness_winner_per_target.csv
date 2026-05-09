@@ -1,0 +1,73 @@
+source_csv,target,winner_model,model_name,winner_r2
+ecowas_df_full_lag_one.csv,combined_trade_baci,PPML FE,disorder + target,0.4501552349490951
+ecowas_df_full_lag_one.csv,tradeflow_baci,Random Forest,fatalities,0.6941618924474655
+ecowas_df_full_lag_one.csv,tradeflow_comtrade_d,Random Forest,fatalities,0.6885175642025554
+ecowas_df_full_lag_one.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.7260025239949237
+ecowas_df_full_lag_one.csv,tradeflow_imf_d,Random Forest,fatalities,0.7019854523499067
+ecowas_df_full_lag_one.csv,tradeflow_imf_o,Random Forest,total_conflicts,0.7169559294839393
+ecowas_df_full_lag_two.csv,combined_trade_baci,PPML FE,target,0.4375721338482644
+ecowas_df_full_lag_two.csv,tradeflow_baci,Random Forest,fatalities,0.6870662000580451
+ecowas_df_full_lag_two.csv,tradeflow_comtrade_d,MLP,total_conflicts,0.6823574198984093
+ecowas_df_full_lag_two.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.7351669352211266
+ecowas_df_full_lag_two.csv,tradeflow_imf_d,MLP,fatalities,0.6955749043971493
+ecowas_df_full_lag_two.csv,tradeflow_imf_o,Random Forest,fatalities,0.7113847263129256
+ecowas_df_full_lag_zero.csv,combined_trade_baci,PPML FE,total_conflicts,0.4360513932343168
+ecowas_df_full_lag_zero.csv,tradeflow_baci,Random Forest,fatalities,0.6949601705206032
+ecowas_df_full_lag_zero.csv,tradeflow_comtrade_d,Random Forest,total_conflicts,0.6774326161429491
+ecowas_df_full_lag_zero.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.7412630899477172
+ecowas_df_full_lag_zero.csv,tradeflow_imf_d,Random Forest,fatalities,0.7024746489345939
+ecowas_df_full_lag_zero.csv,tradeflow_imf_o,Random Forest,fatalities,0.7294561923343951
+ecowas_df_synthetic_full_lag_one_0.csv,combined_trade_baci,OLS Linear FE,target,0.5976746357405696
+ecowas_df_synthetic_full_lag_one_0.csv,tradeflow_baci,Random Forest,perpetrator,0.4847811147061518
+ecowas_df_synthetic_full_lag_one_0.csv,tradeflow_comtrade_d,XGBoost,disorder,0.438757964773791
+ecowas_df_synthetic_full_lag_one_0.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4722305248986551
+ecowas_df_synthetic_full_lag_one_0.csv,tradeflow_imf_d,Random Forest,perpetrator,0.4446255317057435
+ecowas_df_synthetic_full_lag_one_0.csv,tradeflow_imf_o,Random Forest,perpetrator,0.5193732502592526
+ecowas_df_synthetic_full_lag_one_10.csv,combined_trade_baci,OLS Linear FE,perpetrator + target,0.6109372003108672
+ecowas_df_synthetic_full_lag_one_10.csv,tradeflow_baci,Random Forest,fatalities,0.4966924954628859
+ecowas_df_synthetic_full_lag_one_10.csv,tradeflow_comtrade_d,XGBoost,target,0.4216493293121675
+ecowas_df_synthetic_full_lag_one_10.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4415640048045377
+ecowas_df_synthetic_full_lag_one_10.csv,tradeflow_imf_d,XGBoost,event + perpetrator,0.4804861337062045
+ecowas_df_synthetic_full_lag_one_10.csv,tradeflow_imf_o,Random Forest,total_conflicts,0.5188097562779522
+ecowas_df_synthetic_full_lag_one_100.csv,combined_trade_baci,Random Forest,fatalities,0.6056872059032576
+ecowas_df_synthetic_full_lag_one_100.csv,tradeflow_baci,Random Forest,total_conflicts,0.4831370478947598
+ecowas_df_synthetic_full_lag_one_100.csv,tradeflow_comtrade_d,XGBoost,total_conflicts + fatalities,0.4533173120271995
+ecowas_df_synthetic_full_lag_one_100.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4606726993697653
+ecowas_df_synthetic_full_lag_one_100.csv,tradeflow_imf_d,Random Forest,fatalities,0.4288403997687585
+ecowas_df_synthetic_full_lag_one_100.csv,tradeflow_imf_o,Random Forest,fatalities,0.5169460456192932
+ecowas_df_synthetic_full_lag_two_0.csv,combined_trade_baci,Random Forest,fatalities,0.6005116533013326
+ecowas_df_synthetic_full_lag_two_0.csv,tradeflow_baci,Random Forest,fatalities,0.5067520946275716
+ecowas_df_synthetic_full_lag_two_0.csv,tradeflow_comtrade_d,Random Forest,fatalities,0.4386166623214457
+ecowas_df_synthetic_full_lag_two_0.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4939838841688283
+ecowas_df_synthetic_full_lag_two_0.csv,tradeflow_imf_d,Random Forest,perpetrator,0.4513449869178013
+ecowas_df_synthetic_full_lag_two_0.csv,tradeflow_imf_o,Random Forest,fatalities,0.5165774626291408
+ecowas_df_synthetic_full_lag_two_10.csv,combined_trade_baci,OLS Linear FE,disorder + perpetrator,0.6060627400315944
+ecowas_df_synthetic_full_lag_two_10.csv,tradeflow_baci,Random Forest,fatalities,0.4842659175696135
+ecowas_df_synthetic_full_lag_two_10.csv,tradeflow_comtrade_d,XGBoost,target,0.4231725799976913
+ecowas_df_synthetic_full_lag_two_10.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.463641025335858
+ecowas_df_synthetic_full_lag_two_10.csv,tradeflow_imf_d,XGBoost,target,0.4568141110947055
+ecowas_df_synthetic_full_lag_two_10.csv,tradeflow_imf_o,Random Forest,fatalities,0.5174353818942672
+ecowas_df_synthetic_full_lag_two_100.csv,combined_trade_baci,MLP,total_conflicts,0.6149556646703687
+ecowas_df_synthetic_full_lag_two_100.csv,tradeflow_baci,Random Forest,fatalities,0.4878734219973278
+ecowas_df_synthetic_full_lag_two_100.csv,tradeflow_comtrade_d,XGBoost,perpetrator + target,0.4424452418814244
+ecowas_df_synthetic_full_lag_two_100.csv,tradeflow_comtrade_o,Random Forest,target,0.4892117785025227
+ecowas_df_synthetic_full_lag_two_100.csv,tradeflow_imf_d,Random Forest,target,0.4167466542521439
+ecowas_df_synthetic_full_lag_two_100.csv,tradeflow_imf_o,Random Forest,total_conflicts + fatalities,0.5127479914815094
+ecowas_df_synthetic_full_lag_zero_0.csv,combined_trade_baci,OLS Linear FE,disorder + event + target,0.5993748174809684
+ecowas_df_synthetic_full_lag_zero_0.csv,tradeflow_baci,Random Forest,total_conflicts,0.4848467346242481
+ecowas_df_synthetic_full_lag_zero_0.csv,tradeflow_comtrade_d,XGBoost,total_conflicts,0.4201403960943833
+ecowas_df_synthetic_full_lag_zero_0.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4635931968879161
+ecowas_df_synthetic_full_lag_zero_0.csv,tradeflow_imf_d,Random Forest,fatalities,0.4368872472438531
+ecowas_df_synthetic_full_lag_zero_0.csv,tradeflow_imf_o,Random Forest,fatalities,0.5083969385090339
+ecowas_df_synthetic_full_lag_zero_10.csv,combined_trade_baci,OLS Linear FE,disorder,0.6018662533312613
+ecowas_df_synthetic_full_lag_zero_10.csv,tradeflow_baci,Random Forest,fatalities,0.4818028350262098
+ecowas_df_synthetic_full_lag_zero_10.csv,tradeflow_comtrade_d,XGBoost,perpetrator,0.3987717898664797
+ecowas_df_synthetic_full_lag_zero_10.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4392821381373747
+ecowas_df_synthetic_full_lag_zero_10.csv,tradeflow_imf_d,Random Forest,fatalities,0.4381437077339686
+ecowas_df_synthetic_full_lag_zero_10.csv,tradeflow_imf_o,Random Forest,fatalities,0.5141154232362095
+ecowas_df_synthetic_full_lag_zero_100.csv,combined_trade_baci,Random Forest,fatalities,0.6040935190907215
+ecowas_df_synthetic_full_lag_zero_100.csv,tradeflow_baci,Random Forest,fatalities,0.4915140264085855
+ecowas_df_synthetic_full_lag_zero_100.csv,tradeflow_comtrade_d,Random Forest,fatalities,0.4472070351117498
+ecowas_df_synthetic_full_lag_zero_100.csv,tradeflow_comtrade_o,Random Forest,fatalities,0.4506650992923324
+ecowas_df_synthetic_full_lag_zero_100.csv,tradeflow_imf_d,Random Forest,fatalities,0.4318970209704137
+ecowas_df_synthetic_full_lag_zero_100.csv,tradeflow_imf_o,Random Forest,fatalities,0.5161510790378259
