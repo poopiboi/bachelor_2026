@@ -166,7 +166,7 @@ def main(set_random_state:int = 42, printing_state:bool = True):
             df_update = df.copy()
 
             if printing_state:
-                print(f"We are in the dataframe {name}")
+                print(f"We are in the dataframe {name} year lag")
 
             for col in columns_to_update:
                 df_update = synthetic_trade_generator(col, df_update, thresh, printing_state)
