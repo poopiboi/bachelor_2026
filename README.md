@@ -1,4 +1,4 @@
-# Expanding gravity theory using machine learning models withconflict data for trade flow prediction within ECOWAS
+# Expanding gravity theory using machine learning models with conflict data for trade flow prediction within ECOWAS
 
 
 ![Project Logo](images/git_logo02.png)
