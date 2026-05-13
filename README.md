@@ -22,7 +22,7 @@ In case the Google Drive dies, the data consists of:
 04. Enjoy!
 
 
-For any questions or inquiries, you can reach us at mathm@itu.dk or zere@itu.dk
+For any questions or enquiries, you can reach us at mathm@itu.dk or zere@itu.dk
 
 
 
