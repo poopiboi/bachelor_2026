@@ -29,4 +29,4 @@ For any questions or enquiries, you can reach us at mathm@itu.dk or zere@itu.dk
 
 
 Credit:
-Repo for the bachelor project of Zen Al Aabden Ammar Rehda and Mathias Helmuth Mortensen for the 2026 spring semester at ITU. 
+Repo for the bachelor project of Zen Al Aabden Ammar Rehda and Mathias Helmuth Mortensen for the 2026 spring semester in Data Science at ITU. 
