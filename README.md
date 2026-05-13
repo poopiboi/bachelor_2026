@@ -6,10 +6,14 @@
 Welcome to the repo for the ECOWAS conflict trade flow prediction project! Please see a full rundown of actions to run the scripts below:
 
 
-01. Download the necessary data: https://drive.google.com/drive/folders/1QDy30BzTSirBh7ndpf0HgvnI_bYFeVLU?usp=sharing
-  (in case the Google Drive dies, the data consists of:
-    -ACLED conflict data exported from their "Data Export Tool" for all conflict types since 1997 in Africa
-    -The 2022 Gravity data from CEPII that is available from CEPII's homepage at: https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=8)
+01. Download the necessary data: https://drive.google.com/drive/folders/1QDy30BzTSirBh7ndpf0HgvnI_bYFeVLU
+  
+In case the Google Drive dies, the data consists of:
+    
+  ACLED conflict data exported from their "Data Export Tool" for all conflict types since 1997 in Africa
+    
+  The 2022 Gravity data from CEPII that is available from CEPII's homepage at: https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=8
+
 
 02. Change the file paths to the downloaded datasets above in the file 01_EDA.py function called run_all().
 
